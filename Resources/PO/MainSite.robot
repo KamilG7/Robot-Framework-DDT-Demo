@@ -8,3 +8,4 @@ Navigate To
 
 Verify Page Loaded
     wait until page contains element        ${MAIN_SITE_LOADED_CONFIRMATION_LOCATOR}
+
