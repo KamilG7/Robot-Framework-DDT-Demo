@@ -11,6 +11,8 @@ Suite Teardown
 
 *** Test Cases ***
 User should be able to modify address when logged in
+    [Documentation]     User should have access to address panel and posibility to changed it when logged in
+    [Tags]      S_1005  TC_1013    Address
     SeleniumApp.Navigate To Main Site
     SeleniumApp.Navigate To My Account Page
     SeleniumApp.Input Valid Login Credentials
@@ -19,3 +21,5 @@ User should be able to modify address when logged in
     SeleniumApp.Navigate To "Addresses Edit" page
     ${Address_Data} =    DataManager.Get CSV Data       ${ADDRESS_DATA_PATH}
     SeleniumApp.Input "Address" from CSV file           ${Address_Data}
+    SeleniumApp.Verify Message Informiing About Address Change
+    SeleniumApp.User "Log Out"

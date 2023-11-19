@@ -17,18 +17,18 @@ Navigate To My Account Page
 
 Attempt Login
     [Arguments]    ${Credentials}
-    MyAccount.Enter Login Credentials   ${Credentials}
+    MyAccount.Enter Login Credentials              ${Credentials}
     MyAccount.Click "Log In"
 
 Attempt Registration
     [Arguments]    ${RegistrationData}
-    MyAccount.Enter Registration Data   ${RegistrationData}
+    MyAccount.Enter Registration Data              ${RegistrationData}
     MyAccount.Click Registration Button
 
 Verify Login Page Error Message
     [Arguments]    ${ExpectedErrorMessage}
     MyAccount.Verify Login Error List Loaded
-    MyAccount.Verify Login Error Message    ${ExpectedErrorMessage}
+    MyAccount.Verify Login Error Message           ${ExpectedErrorMessage}
 
 Verify Registration Page Error Message
     [Arguments]    ${ExpectedErrorMessage}
@@ -38,7 +38,7 @@ Verify Registration Page Error Message
 
 Login With Invalid Credentials
     [Arguments]     ${InvalidLoginScenarios}
-    FOR        ${LoginScenario}        IN      @{InvalidLoginScenarios}
+    FOR        ${LoginScenario}        IN       @{InvalidLoginScenarios}
        run keyword and continue on failure      Navigate To Main Site
        run keyword and continue on failure      Navigate To My Account Page
        run keyword and continue on failure      Attempt Login       ${LoginScenario}
@@ -68,10 +68,10 @@ Press "Registration" Button
 Register With Invalid Credentials
     [Arguments]     ${InvalidRegisterScenarios}
     FOR        ${RegisterScenario}        IN      @{InvalidRegisterScenarios}
-       run keyword and continue on failure      Navigate To Main Site
-       run keyword and continue on failure      Navigate To My Account Page
-       run keyword and continue on failure      Attempt Registration       ${RegisterScenario}
-       run keyword and continue on failure      Verify Registration Page Error Message     ${RegisterScenario}
+       run keyword and continue on failure        Navigate To Main Site
+       run keyword and continue on failure        Navigate To My Account Page
+       run keyword and continue on failure        Attempt Registration                       ${RegisterScenario}
+       run keyword and continue on failure        Verify Registration Page Error Message     ${RegisterScenario}
     END
 
 Navigate to "Addresses" Tab
@@ -91,5 +91,12 @@ Input "Address" from CSV file
     AddressesEdit.Input "Zip Code"            ${AddressData[4]}
     AddressesEdit.Input "Town"                ${AddressData[5]}
     AddressesEdit.Press "Save Address" Button
+
+Verify Message Informiing About Address Change
+    Addresses.Verify Address Changed
+
+Navigate To Shop
+    Shop.Navigate To
+    Shop.Verify Page Loaded
 
 

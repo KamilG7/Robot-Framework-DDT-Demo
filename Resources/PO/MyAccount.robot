@@ -9,19 +9,19 @@ ${RANDOM_EMAIL} =     ${random_py}
 
 *** Keywords ***
 Navigate To
-    click link      ${MY_ACCOUNT_BUTTON_LOCATOR}
+    click link                              ${MY_ACCOUNT_BUTTON_LOCATOR}
 
 Verify Page Loaded
     wait until page contains element        ${MY_ACCOUNT_LOADED_CONFIRMATION_LOCATOR}
 
 Input Login "Email"
-    input text                   ${LOGIN_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
+    input text                              ${LOGIN_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
 
 Input Login "Password"
-    input text                   ${LOGIN_PASSWORD_LOCATOR}    ${USER_PASSWORD}
+    input text                              ${LOGIN_PASSWORD_LOCATOR}    ${USER_PASSWORD}
 
 Click "Log In"
-    click button                 ${SIGN_IN_BUTTON_LOCATOR}
+    click button                            ${SIGN_IN_BUTTON_LOCATOR}
 
 Verify User Logged In
     wait until page contains element        ${LOG_OUT_BUTTON_LOCATOR}
@@ -37,24 +37,24 @@ Enter Login Credentials
 
 Verify Login Error Message
     [Arguments]    ${ExpectedErrorMessage}
-    element should contain       ${LOGIN_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
+    element should contain                   ${LOGIN_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
 
 Verify Registration Error Message
     [Arguments]    ${ExpectedErrorMessage}
-    element should contain       ${REGISTRATION_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
+    element should contain                   ${REGISTRATION_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
 
 Click "Log Out" Button
-    click link                 ${LOG_OUT_BUTTON_LOCATOR}
+    click link                               ${LOG_OUT_BUTTON_LOCATOR}
 
 
 Input Registration "Email"
-    input text                   ${REGISTRATION_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
+    input text                               ${REGISTRATION_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
 
 Input Registration "Password"
-    input text                   ${REGISTRATION_PASSWORD_LOCATOR}    ${USER_PASSWORD}
+    input text                               ${REGISTRATION_PASSWORD_LOCATOR}    ${USER_PASSWORD}
 
 Click Registration Button
-    click button                 ${REGISTRATION_BUTTON_LOCATOR}
+    click button                             ${REGISTRATION_BUTTON_LOCATOR}
 
 Enter Registration Data
     [Arguments]    ${RegistrationData}
@@ -66,8 +66,8 @@ Enter Registration Data
 
 
 Verify Login Error List Loaded
-    wait until page contains element        ${LOGIN_ERROR_LOCATOR}
+    wait until page contains element         ${LOGIN_ERROR_LOCATOR}
 
 Verify Registration Error List Loaded
-    wait until page contains element        ${REGISTRATION_ERROR_LOCATOR}
+    wait until page contains element         ${REGISTRATION_ERROR_LOCATOR}
 
