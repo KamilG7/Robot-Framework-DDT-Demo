@@ -17,3 +17,5 @@ User should be able to see aviable products
     SeleniumApp.Navigate To My Account Page
     SeleniumApp.Input Valid Login Credentials
     SeleniumApp.Press "Log In" Button
+    SeleniumApp.Navigate To Shop and Check Products
+

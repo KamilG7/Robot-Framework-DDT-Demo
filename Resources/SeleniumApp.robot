@@ -92,11 +92,12 @@ Input "Address" from CSV file
     AddressesEdit.Input "Town"                ${AddressData[5]}
     AddressesEdit.Press "Save Address" Button
 
-Verify Message Informiing About Address Change
+Verify Message Informing About Address Change
     Addresses.Verify Address Changed
 
-Navigate To Shop
+Navigate To Shop and Check Products
     Shop.Navigate To
     Shop.Verify Page Loaded
+    Check If Products Displays
 
 

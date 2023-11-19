@@ -21,5 +21,5 @@ User should be able to modify address when logged in
     SeleniumApp.Navigate To "Addresses Edit" page
     ${Address_Data} =    DataManager.Get CSV Data       ${ADDRESS_DATA_PATH}
     SeleniumApp.Input "Address" from CSV file           ${Address_Data}
-    SeleniumApp.Verify Message Informiing About Address Change
+    SeleniumApp.Verify Message Informing About Address Change
     SeleniumApp.User "Log Out"

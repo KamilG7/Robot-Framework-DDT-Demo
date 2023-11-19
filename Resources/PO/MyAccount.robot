@@ -52,6 +52,7 @@ Input Registration "Email"
 
 Input Registration "Password"
     input text                               ${REGISTRATION_PASSWORD_LOCATOR}    ${USER_PASSWORD}
+    sleep                                    1s
 
 Click Registration Button
     click button                             ${REGISTRATION_BUTTON_LOCATOR}
