@@ -21,10 +21,20 @@ Attempt Login
     MyAccount.Enter Login Credentials   ${Credentials}
     MyAccount.Click "Log In"
 
+Attempt Registration
+    [Arguments]    ${RegistrationData}
+    MyAccount.Enter Registration Data   ${RegistrationData}
+    MyAccount.Click Registration Button
 
 Verify Login Page Error Message
     [Arguments]    ${ExpectedErrorMessage}
+    MyAccount.Verify Login Error List Loaded
     MyAccount.Verify Login Error Message    ${ExpectedErrorMessage}
+
+Verify Registration Page Error Message
+    [Arguments]    ${ExpectedErrorMessage}
+    MyAccount.Verify Registration Error List Loaded
+    MyAccount.Verify Registration Error Message    ${ExpectedErrorMessage}
 
 
 Login With Invalid Credentials
@@ -47,3 +57,20 @@ Press "Log In" Button
 User "Log Out"
     MyAccount.Click "Log Out" Button
     MyAccount.Verify Page Loaded
+
+Input Valid "Registration" Data
+    MyAccount.Input Registration "Email"
+    MyAccount.Input Registration "Password"
+
+Press "Registration" Button
+    MyAccount.Click Registration Button
+    MyAccount.Verify User Logged In
+
+Register With Invalid Credentials
+    [Arguments]     ${InvalidRegisterScenarios}
+    FOR        ${RegisterScenario}        IN      @{InvalidRegisterScenarios}
+       run keyword and continue on failure      Navigate To Main Site
+       run keyword and continue on failure      Navigate To My Account Page
+       run keyword and continue on failure      Attempt Registration       ${RegisterScenario}
+       run keyword and continue on failure      Verify Registration Page Error Message     ${RegisterScenario}
+    END

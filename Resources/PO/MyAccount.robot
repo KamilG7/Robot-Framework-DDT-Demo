@@ -34,7 +34,35 @@ Verify Login Error Message
     [Arguments]    ${ExpectedErrorMessage}
     element should contain       ${LOGIN_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
 
-Click "Log Out" Button
-    click button                 ${LOG_OUT_BUTTON_LOCATOR}
+Verify Registration Error Message
+    [Arguments]    ${ExpectedErrorMessage}
+    element should contain       ${REGISTRATION_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
 
+Click "Log Out" Button
+    click link                 ${LOG_OUT_BUTTON_LOCATOR}
+
+Input Registration "Email"
+    ${Random_email} =            DataManager.Get Random Email
+    input text                   ${REGISTRATION_EMAIL_LOCATOR}       ${Random_email}
+
+Input Registration "Password"
+    input text                   ${REGISTRATION_PASSWORD_LOCATOR}    ${USER_PASSWORD}
+
+Click Registration Button
+    click button                 ${REGISTRATION_BUTTON_LOCATOR}
+
+Enter Registration Data
+    [Arguments]    ${RegistrationData}
+    run keyword if    not '${RegistrationData[0]}'=='#BLANK'      input text       ${REGISTRATION_EMAIL_LOCATOR}    ${RegistrationData[0]}
+    log     ${RegistrationData[0]}
+    run keyword if    not '${RegistrationData[1]}'=='#BLANK'      input text    ${registration_password_locator}    ${RegistrationData[1]}
+    log     ${RegistrationData[1]}
+    Sleep                   1s
+
+
+Verify Login Error List Loaded
+    wait until page contains element        ${LOGIN_ERROR_LOCATOR}
+
+Verify Registration Error List Loaded
+    wait until page contains element        ${REGISTRATION_ERROR_LOCATOR}
 
