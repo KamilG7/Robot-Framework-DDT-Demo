@@ -6,6 +6,9 @@ def read_csv(csv_file):
         reader = csv.reader(csvfile)
         for row in reader:
             data.append(row)
-    return data
+    if len(data) == 1 and "address" in csv_file:
+        return data[0]
+    else:
+        return data
 
 #print(read_csv("../Data/login.csv"))

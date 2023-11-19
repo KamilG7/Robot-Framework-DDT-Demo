@@ -1,7 +1,6 @@
 *** Settings ***
 Resource                ./PO/Addresses.robot
 Resource                ./PO/AddressesEdit.robot
-Resource                ./PO/LoginRegistration.robot
 Resource                ./PO/MainSite.robot
 Resource                ./PO/MyAccount.robot
 Resource                ./PO/Shop.robot
@@ -74,3 +73,23 @@ Register With Invalid Credentials
        run keyword and continue on failure      Attempt Registration       ${RegisterScenario}
        run keyword and continue on failure      Verify Registration Page Error Message     ${RegisterScenario}
     END
+
+Navigate to "Addresses" Tab
+    Addresses.Navigate to
+    Addresses.Verify Page Loaded
+
+Navigate To "Addresses Edit" page
+    AddressesEdit.Navigate to
+    AddressesEdit.Verify Page Loaded
+
+Input "Address" from CSV file
+    [Arguments]    ${AddressData}
+    AddressesEdit.Input "First Name"          ${AddressData[0]}
+    AddressesEdit.Input "Last Name"           ${AddressData[1]}
+    AddressesEdit.Pick "Country"              ${AddressData[2]}
+    AddressesEdit.Input "Street Address"      ${AddressData[3]}
+    AddressesEdit.Input "Zip Code"            ${AddressData[4]}
+    AddressesEdit.Input "Town"                ${AddressData[5]}
+    AddressesEdit.Press "Save Address" Button
+
+

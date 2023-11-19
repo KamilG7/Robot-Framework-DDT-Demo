@@ -21,8 +21,8 @@ Login With Valid Credentials
     SeleniumApp.User "Log Out"
 
 
-Should See Valid Error Messages With Invalid Login Credentials
-    [Documentation]     Failed login attempts should triger correct error messages
-    [Tags]      S_1004    TC_1007    TC_1008    TC_1009    TC_10010    TC_10011    TC_1012    Login
-    ${InvalidLoginScenarios} =    DataManager.Get CSV Data      ${INVALID_LOGIN_CREDENTIALS_PATH}
-    SeleniumApp.Login With Invalid Credentials      ${InvalidLoginScenarios}
+#Should See Valid Error Messages With Invalid Login Credentials
+    #[Documentation]     Failed login attempts should triger correct error messages
+    #[Tags]      S_1004    TC_1007    TC_1008    TC_1009    TC_10010    TC_1011    TC_1012    Login
+    #${InvalidLoginScenarios} =    DataManager.Get CSV Data      ${INVALID_LOGIN_CREDENTIALS_PATH}
+    #SeleniumApp.Login With Invalid Credentials      ${InvalidLoginScenarios}

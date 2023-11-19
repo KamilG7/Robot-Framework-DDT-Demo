@@ -1,6 +1,11 @@
 *** Settings ***
 Library                         SeleniumLibrary
 Resource                        ../../data/Variables.robot
+Variables                       ../../CustomLib/EmailRandomizer.py
+
+*** Variables ***
+${RANDOM_EMAIL} =     ${random_py}
+
 
 *** Keywords ***
 Navigate To
@@ -10,7 +15,7 @@ Verify Page Loaded
     wait until page contains element        ${MY_ACCOUNT_LOADED_CONFIRMATION_LOCATOR}
 
 Input Login "Email"
-    input text                   ${LOGIN_EMAIL_LOCATOR}       ${USER_EMAIL}
+    input text                   ${LOGIN_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
 
 Input Login "Password"
     input text                   ${LOGIN_PASSWORD_LOCATOR}    ${USER_PASSWORD}
@@ -41,9 +46,9 @@ Verify Registration Error Message
 Click "Log Out" Button
     click link                 ${LOG_OUT_BUTTON_LOCATOR}
 
+
 Input Registration "Email"
-    ${Random_email} =            DataManager.Get Random Email
-    input text                   ${REGISTRATION_EMAIL_LOCATOR}       ${Random_email}
+    input text                   ${REGISTRATION_EMAIL_LOCATOR}       ${RANDOM_EMAIL}
 
 Input Registration "Password"
     input text                   ${REGISTRATION_PASSWORD_LOCATOR}    ${USER_PASSWORD}
