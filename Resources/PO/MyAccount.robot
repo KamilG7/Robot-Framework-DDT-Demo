@@ -23,11 +23,18 @@ Verify User Logged In
 
 Enter Login Credentials
     [Arguments]    ${Credentials}
-    Run Keyword Unless      '${Credentials[0]}'    ==    'BLANK'    input text    ${LOGIN_EMAIL_LOCATOR}    ${Credentials[0]}
-    Run Keyword Unless      '${Credentials[1]}'    ==    'BLANK'    input text    ${LOGIN_PASSWORD_LOCATOR}    ${Credentials[1]}
+    run keyword if    not '${Credentials[0]}'=='#BLANK'      input text       ${LOGIN_EMAIL_LOCATOR}    ${Credentials[0]}
+    log     ${Credentials[0]}
+    run keyword if    not '${Credentials[1]}'=='#BLANK'      input text    ${LOGIN_PASSWORD_LOCATOR}    ${Credentials[1]}
+    log     ${Credentials[1]}
     Sleep                   1s
 
 
 Verify Login Error Message
     [Arguments]    ${ExpectedErrorMessage}
     element should contain       ${LOGIN_ERROR_LOCATOR}     ${ExpectedErrorMessage[2]}
+
+Click "Log Out" Button
+    click button                 ${LOG_OUT_BUTTON_LOCATOR}
+
+
