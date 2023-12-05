@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation           Test cases for "Main Site" app
+Documentation           Test cases for "Shop" tab
 Resource                ../Resources/SeleniumApp.robot
 Resource                ../resources/Common.robot
 Resource                ../data/Variables.robot

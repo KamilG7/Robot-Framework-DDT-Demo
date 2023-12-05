@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation    Layer needed to read data from external files
-Library           ../CustomLib/CSVReader.py
-Library           ../CustomLib/EmailRandomizer.py
+Documentation               Layer needed to read data from external files
+Library                     ../CustomLib/CSVReader.py
+Library                     ../CustomLib/EmailRandomizer.py
 
 *** Keywords ***
 Get CSV Data

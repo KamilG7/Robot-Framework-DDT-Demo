@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation                   PO for Addresses Tab in user panel
 Library                         SeleniumLibrary
 Resource                        ../../data/Variables.robot
 

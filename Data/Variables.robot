@@ -1,5 +1,8 @@
 *** Settings ***
+Documentation           Variables container
 Resource                ../resources/DataManager.robot
+
+
 *** Variables ***
 ${BROWSER} =          chrome
 

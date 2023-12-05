@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation                   PO for Shop tab
 Library                         SeleniumLibrary
 Resource                        ../../data/Variables.robot
 

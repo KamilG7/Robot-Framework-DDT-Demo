@@ -1,11 +1,11 @@
 *** Settings ***
+Documentation                   PO for user panel
 Library                         SeleniumLibrary
 Resource                        ../../data/Variables.robot
 Variables                       ../../CustomLib/EmailRandomizer.py
 
 *** Variables ***
 ${RANDOM_EMAIL} =     ${random_py}
-
 
 *** Keywords ***
 Navigate To

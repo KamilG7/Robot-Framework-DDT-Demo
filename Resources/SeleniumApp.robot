@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation           Script gruping pre-defined keywords into test steps
 Resource                ./PO/Addresses.robot
 Resource                ./PO/AddressesEdit.robot
 Resource                ./PO/MainSite.robot

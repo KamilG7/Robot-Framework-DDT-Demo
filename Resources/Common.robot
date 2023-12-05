@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation                   Common file for opening and closing brawser before/after TC
 Library                         SeleniumLibrary
 Resource                        ../data/Variables.robot
 

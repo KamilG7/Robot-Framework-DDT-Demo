@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation           Test cases for "Main Site" app
+Documentation           Test cases for "Main Site" tab
 Resource                ../Resources/SeleniumApp.robot
 Resource                ../resources/Common.robot
 Resource                ../data/Variables.robot
@@ -12,7 +12,7 @@ Suite Teardown
 
 *** Test Cases ***
 Registration With Valid Data
-    [Documentation]     Registration should suceed with valid credentials
+    [Documentation]     Registration should suceed with valid input
     [Tags]      S_1001    TC_1001    Registration
     SeleniumApp.Navigate To Main Site
     SeleniumApp.Navigate To My Account Page
