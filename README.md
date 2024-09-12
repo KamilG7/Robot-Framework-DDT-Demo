@@ -1,4 +1,21 @@
-Robot Framework testing project based on Demo Selenium Page intended for testing.
-Please find dependencies in the pipenv files.
-Manual Test Cases I wrote for this project are located in Data directory.
-Project made using DDT style and custom libraries in Pyton.
+Robot framework UI project
+
+########################################
+
+1.Description
+
+Robot framework project utilizing andvanced framework capabilities with DDT and PO methodology.
+
+2.Documentation
+
+Exact test cases documentation you can find in data directory.
+
+3.Security
+
+No logins, passwords, keys or tokens that could pose potential security risk was used in this project.
+
+4.Getting Started
+
+All packages needed to run project you can fing in the "pipfile" file.
+
+KamilG7
